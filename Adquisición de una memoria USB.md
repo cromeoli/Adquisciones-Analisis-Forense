@@ -24,22 +24,36 @@ Tras unos minutos, tendremos creada la imagen en formato .aff y también se crea
 Para realizar una adquisición con Guymager, tendremos que en primer lugar conectar también nuestra memoria a la máquina con la que estamos trabajando y realizamos lo siguiente:
 
 1. Buscamos nuestra memoria USB y haciendo click derecho seleccionamos "Acquire image".
-2. Tendremos un menú similar al de FTK donde tendremos que rellenar datos de interés como el número de caso, de evidencia...etc
-3. En el mismo menú, podremos seleccionar la ruta destino de la imagen junto a su nombre y el nombre del archivo de información
-4. Ahora nos deja calcular el hash. Lo ideal es o bien calcular solo el SHA-256 o bien calcular el MD5 y el SHA-1
+![Alt text](img/image.png)
 
-Guymager comenzará el proceso de adquisición tras esto, y resultará en el archivo con extension .000 y un archivo con información del proceso.
+2. Tendremos un menú similar al de FTK donde tendremos que rellenar datos de interés como el número de caso, de evidencia...etc. Los rellenaremos con los datos correspondientes. En el mismo menú, podremos seleccionar la ruta destino de la imagen junto a su nombre y el nombre del archivo de información.
+![Alt text](img/image-1.png)
+3. Ahora nos deja calcular el hash. Lo ideal es o bien calcular solo el SHA-256 o bien calcular el MD5 y el SHA-1. Vamos a probar la opción de calcular MD5 y SHA-1.
+![Alt text](img/image-2.png)
+Podremos tras darle a *Start* y comenzará el proceso de adquisición
+![Alt text](img/image-3.png)
+Es interesante ver como guymager permite realizar varias operaciones simultáneas.
+
+Comenzará el proceso de adquisición tras esto, y resultará en el archivo con extension .000 y un archivo con información del proceso con *.info* como extensión.
+
 ## dd
 
 Para hacer una adquisición utilizando el comando `dd` de linux, haremos lo siguiente:
 
 1. Conectamos por supuesto nuestra memoria USB a un equipo con una distribución de Linux
 2. Lo localizamos en nuestro equipo, en nuestro caso es el `dev/sda1` y una vez lo tengamos, primero vamos a calcular el hash  con SHA1 de la memoria a copiar con el comando `shasum /dev/sda1`
-   ![[Pasted image 20231101232211.png]]
+
+   ![Obtencion de sha](img/1.png)
+
 3. Una vez lo tengamos vamos a proceder a hacer la copia usando `dd` de la siguiente manera:
-	`dd if=/dev/sda1 of=/home/user/adquisiciones/usb.dd bs =512 conv=noerror,sync`
-	![[Pasted image 20231101232317.png]]
+
+	```bash
+   dd if=/dev/sda1 of=/home/user/adquisiciones/usb.dd bs =512 conv=noerror,sync
+   ```
+
+   ![Aplicación del comando dd](img/2.png)
 4. Una vez tengamos la copia hecha, comprobamos su hash para ver si coincide (Debe hacerlo)
-   ![[Pasted image 20231101232414.png]]
+
+   ![Comprobación de hash](img/3.png)
 
 Efectivamente coincide, y con esto habríamos realizado nuestra adquisición
