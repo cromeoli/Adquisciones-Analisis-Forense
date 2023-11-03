@@ -6,20 +6,18 @@ Estaremos trabajando con una memoria de 1 GB para facilitar y agilizar el proces
 
 ## FTK
 
-Para adquirir la memoria con FTK tendremos únicamente que hacer lo siguiente:
+En primer lugar voy a utilizar la herramienta FTK para realizar una imagen de la memoria USB. Para realizar la adquisición he hecho lo siguiente:
 
 1. Insertamos la memoria USB de la que queremos hacer la adquisición en un equipo con Windows y FTK instalados
 2. Abrimos la interfaz de usuario de FTK y seleccionamos *File/Create Disk Image*
 3. Seleccionamos la opción "*Physical Drive*" 
 4. Elegimos nuestra memoria USB
 5. Tendremos que seleccionar un directorio de destino para la imagen seleccionando "*Add...*"
-	- En este punto tendremos que seleccionar si verificar la imagen creada (el doble de tiempo)
-6. Seleccionamos el formato .aff (Advanced Forensic Format)
-6. Seleccionamos el formato .dd
+6. Para esta adquisición vamos a probar el formato .aff (Advanced Forensic Format).
 7. Le damos a *Start* y nos solicitará una serie de datos como Número de caso, de evidencia, descripción, nombre del examinador... Además de Destino de la imagen y nombre del archivo de imagen.
 8. Una vez esos datos estén rellenos, le damos a "*Finish*" y ya podremos darle a "*Start*" para comenzar la adquisición.
 
-Tras unos minutos, tendremos creada la imagen en formato .aff .dd y un archivo .txt con información sobre la adquisición.
+Tras unos minutos, tendremos creada la imagen en formato .aff y también se creará un archivo .txt con información sobre la adquisición.
 
 ## Guymager
 
