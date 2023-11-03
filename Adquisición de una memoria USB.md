@@ -68,4 +68,4 @@ Para hacer una adquisición utilizando el comando `dd` de linux, haremos lo sigu
 
    ![Comprobación de hash](img/3.png)
 
-Efectivamente coincide, y con esto habríamos realizado nuestra adquisición
+Efectivamente vemos que coincide, por lo que con esto habríamos realizado nuestra adquisición utilizando el comando `dd`.
