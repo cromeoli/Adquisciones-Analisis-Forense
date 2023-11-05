@@ -8,7 +8,7 @@ Durante el proceso se aplicará en la medida de lo posible, ya que en este caso 
 
 ## Preparación y reconocimento
 
-En la primera fase de nuestra metodología tratamos de tener en cuenta el escenario con el que nos encontramos y evaluar nuestro proceder en base a ello. Estamos frente a una máquina Windows 10 encendida, estaremos trabajando con una máquina virtual de nuestro equipo. En primer lugar, si queremos realizar una extracción de calidad, bajo ningún concepto podríamos apagarla. 
+En la primera fase de nuestra metodología tratamos de tener en cuenta el escenario con el que nos encontramos y evaluar nuestro proceder en base a ello. Estamos frente a una máquina Windows 10 encendida, estaremos trabajando con una máquina virtual de nuestro equipo. En primer lugar, si queremos realizar una extracción de calidad, bajo ningún concepto podríamos apagarla ni realizar ninguna operación adicional más que las necesarias para trabajar. 
 
 Debemos intentar actuar con la máxima precaución alterando lo más mínimo los procesos y memoria volátil de la máquina. Tan solo haremos lo necesario, que será instalar nuestras herramientas, **FTK** y **WinTriage**, desde un dispositivo externo previamente preparado. Tan solo usaremos estas dos herramientas porque FTK nos permite además de hacer una imagen de disco, realizar una adquisición de la memoria volátil, y nos ahorra el tener que instalar una herramienta específicamente para éste propósito.
 
@@ -20,7 +20,7 @@ En primer lugar debemos de tener en cuenta qué vamos a hacer primero, en base a
 
 Con esto en mente, lo mejor es proceder a en primer lugar realizar una adquisición de la memoria volátil (RAM) mediante FTK debido a ser la memoria más volátil, a tener una sencilla extracción y tener un valor probable considerable, para luego continuar la creación de una imagen del disco de la máquina también con **FTK**, que es menos volátil que la ram, y también nos aportará datos probablemente valiosos con un esfuerzo pequeño. 
 
-Una vez hayamos extraídos los datos, podremos aplicar el proceso de triage con la herramienta **WinTriage**, ya que considero que la herramienta podría alterar la integridad de los datos al empezar a ejecutar las operaciones necesarias.
+Una vez hayamos extraídos los datos, podremos aplicar el proceso de triage con la herramienta **WinTriage**, ya que considero que la herramienta podría alterar la integridad de los datos al empezar a ejecutar las operaciones necesarias. Además, para ejecutar WinTriage necesitamos desactivar el antivirus, por lo que modificaríamos los datos de registros y procesos que recopilaríamos en el posterior proceso de triaje.
 
 ## Adquisición
 
@@ -38,14 +38,14 @@ Nada mas terminar la adquisición de RAM, procedemos a realizar una imagen de di
 
 ![](img/imagenDisco.png)
 
-Seleccionamos también el disco Z, añadimos  metadatos de la adquisición y procedemos. Esta adquisición tardará más debido a que este disco es mayor que la memoria RAM.
+Seleccionamos también el disco \Z:, añadimos  metadatos de la adquisición y procedemos. Esta adquisición tardará más debido a que este disco es mayor que la memoria RAM.
 
 ![](img/imagenDisco2.png)
 
 
-Una vez con los datos asegurados y adquiridos con éxito, procedemos a realizar el triaje de la máquina. Para esto es importante desactivar el antivirus ya que muchas de las herramientas de triaje entran en conflicto directo con ellos. 
+Una vez con los datos asegurados y adquiridos con éxito, procedemos a realizar el triaje de la máquina. Para esto es importante desactivar el antivirus ya que muchas de las herramientas de triaje entran en conflicto directo con ellos debido a como funcionan (Instalación de drivers para recopilar información del núcleo de la máquina). 
 
-Procedemos a desactivar windows defender, también por supuesto debemos ejecutar con privilegios de administrador. Empezamos a trabajar con la herramienta WinTriage, esta sí que debemos moverla a la máquina a diferencia de FTK. WinTriage requiere de múltiples herramientas auxiliares que deberíamos de instalar para sacarle el máximo provecho.
+Procedemos a desactivar Windows Defender, también por supuesto debemos ejecutar con privilegios de administrador. Empezamos a trabajar con la herramienta WinTriage, esta sí que debemos moverla a la máquina a diferencia de FTK. WinTriage requiere además de múltiples herramientas auxiliares que deberíamos de instalar para sacarle el máximo provecho.
 
 ![](img/wintriage.png)
 
@@ -57,6 +57,6 @@ De esta manera ya tendríamos realizada nuestra adquisición en vivo de una máq
 
 ![](img/fin2.jpeg)
 
-Siguiendo con nuestra metodología es fundamental ahora etiquetar y preservar estos datos adecuadamente, así como indicar que yo fui quien los estaba manipulando para preservar la cadena de custodia.
+Siguiendo con nuestra metodología es fundamental ahora etiquetar y preservar estos datos adecuadamente, así como indicar que yo fui quien los estaba manipulando para preservar la cadena de custodia. Posterior a esto, sería la hora de analizar los datos recopilados.
 
 
