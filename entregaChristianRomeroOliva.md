@@ -1,3 +1,3 @@
 ## Enlace al documento en mi repositorio de github
 
-https://github.com/cromeoli/Adquisciones-Analisis-Forense/blob/main/Adquisici%C3%B3n%20de%20una%20memoria%20USB.md
+https://github.com/cromeoli/Adquisiciones-Analisis-Forense/blob/main/Adquisici%C3%B3n%20forense%20en%20vivo%20de%20una%20m%C3%A1quina%20Windows%2010.md
